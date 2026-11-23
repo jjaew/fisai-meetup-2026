@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FISAI MeetUP 과제용 정부 안내서비스 탐색 페이지. 카테고리와 문의기관으로 서비스를 찾을 수 있습니다.">
+  <meta name="theme-color" content="#0d264e">
+  <title>한눈에 보는 정부 안내서비스 | FISAI MeetUP</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="assets/data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#service-section">본문 바로가기</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="FISAI MeetUP 과제, 페이지 상단으로">
+        <span class="brand-mark" aria-hidden="true">F<span class="brand-dot">.</span></span>
+        <span class="brand-label">FISAI <strong>MeetUP</strong><small>2026 · DEMO PROJECT</small></span>
+      </a>
+      <nav class="nav-links" aria-label="주요 메뉴">
+        <a href="#service-section">서비스 찾기</a>
+        <a href="#news-section">카드뉴스</a>
+      </nav>
+      <span class="top-tag"><span class="tag-dot" aria-hidden="true"></span> 과제용 데모</span>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> PUBLIC SERVICE DIRECTORY</div>
+          <h1 id="hero-heading">필요한 안내서비스,<br><em>한눈에</em> 찾아보세요.</h1>
+          <p class="hero-description">복잡하게 찾지 않아도 괜찮아요.<br>카테고리와 문의기관을 검색해 필요한 안내를 확인하세요.</p>
+          <a class="primary-link" href="#service-section">안내서비스 살펴보기 <span aria-hidden="true">↗</span></a>
+          <p class="hero-caveat">※ 본 페이지는 FISAI 밋업 과제용으로 제작되었으며, 실제 공공서비스 정보가 아닙니다.</p>
+        </div>
+        <div class="hero-panel" aria-label="안내서비스 데이터 요약">
+          <div class="panel-head"><span class="panel-label">SERVICE OVERVIEW</span><span class="panel-chip">데이터 현황</span></div>
+          <div class="panel-primary"><span>전체 안내서비스</span><div><strong id="hero-total">—</strong><span>건</span></div></div>
+          <div class="panel-grid">
+            <div><span>안내 카테고리</span><strong id="hero-categories">— <small>개</small></strong></div>
+            <div><span>온라인 안내 가능</span><strong id="hero-online">— <small>건</small></strong></div>
+          </div>
+          <div class="panel-footer"><span class="pulse" aria-hidden="true"></span> CSV 원본 데이터 기준 집계</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service-section" class="services section container" aria-labelledby="service-heading">
+      <div class="section-head">
+        <div><p class="section-kicker">01 / EXPLORE SERVICES</p><h2 id="service-heading">서비스 카테고리</h2><p>분야별 안내와 문의기관을 확인해 보세요.</p></div>
+        <div class="section-count"><strong id="overall-category-count">—</strong>개 카테고리</div>
+      </div>
+
+      <div class="search-bar">
+        <div class="search-input-wrap">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <label class="sr-only" for="service-search">카테고리 또는 문의기관 검색</label>
+          <input id="service-search" type="search" autocomplete="off" spellcheck="false" placeholder="카테고리 또는 문의기관을 검색하세요 (예: 복지, 교육부)">
+        </div>
+        <button id="clear-search" class="clear-button" type="button" hidden>초기화 <span aria-hidden="true">×</span></button>
+      </div>
+      <div class="results-header"><p class="result-label" id="search-result" aria-live="polite">결과 0건</p><p class="helper-label">카드를 선택하면 세부 서비스가 표시됩니다.</p></div>
+      <div id="cards" class="card-grid" aria-label="카테고리별 안내서비스"></div>
+      <div id="empty-results" class="empty-results" hidden>
+        <span class="empty-symbol" aria-hidden="true">⌕</span><strong>검색 결과가 없습니다.</strong><p>다른 카테고리나 문의기관 이름으로 검색해 주세요.</p><button id="empty-clear" type="button">검색 초기화</button>
+      </div>
+      <p class="data-note">데이터 출처: 과제 제공 <code>안내서비스.csv</code> (24건) · 대표 문의기관은 카테고리별 최빈값 기준 · 제공 데이터는 실제 기관 정보와 다를 수 있습니다.</p>
+    </section>
+
+    <section id="news-section" class="news-section section" aria-labelledby="news-heading">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="section-kicker">02 / INFORMATION CARDS</p><h2 id="news-heading">안전 정보 카드뉴스</h2><p>과제에서 제공된 카드뉴스 4장을 확인해 보세요.</p></div>
+          <span class="news-count">첨부 이미지 4종</span>
+        </div>
+        <div class="news-grid">
+          <figure class="news-card"><img src="assets/카드뉴스1.png" alt="생활안전 캠페인: 어린이·노인 보호, 4대 분야 추진, 참여 시설 확대" loading="lazy" width="1080" height="1080"><figcaption><span>01</span> 생활안전 캠페인</figcaption></figure>
+          <figure class="news-card"><img src="assets/카드뉴스2.png" alt="어린이 안전: 어린이집 안전 점검, 등하굣길 캠페인, 실내 안전 교육" loading="lazy" width="1080" height="1080"><figcaption><span>02</span> 어린이 안전</figcaption></figure>
+          <figure class="news-card"><img src="assets/카드뉴스3.png" alt="교통안전: 신호 준수 캠페인, 방어운전 교육, 어르신 보행자 보호" loading="lazy" width="1080" height="1080"><figcaption><span>03</span> 교통안전</figcaption></figure>
+          <figure class="news-card"><img src="assets/카드뉴스4.png" alt="화재 예방: 주거시설 점검, 전통시장 안전, 캠핑장 화재 예방" loading="lazy" width="1080" height="1080"><figcaption><span>04</span> 화재 예방</figcaption></figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><span><strong>FISAI MeetUP</strong> · 2026 Challenge I</span><span>과제 제출용 비공식 데모 페이지</span></div></footer>
+</body>
+</html>
